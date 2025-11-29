@@ -1,0 +1,557 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* --- Project styles moved from index.html --- */
+
+:root{
+  --bg: #f6fbff;
+  --bg-alt: #eef6ff;
+  --card: #ffffff;
+  --text: #0b2540;
+  --muted: #4b5866;
+  --accent: #ff6b6b;
+  --accent-2: #7c5cff;
+  --glass: rgba(255,255,255,0.6);
+  --glass-2: rgba(12,18,28,0.06);
+  --shadow: rgba(8,20,40,0.08);
+}
+
+/* Respect user's system preference before JS runs */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: linear-gradient(180deg,#061021,#071427);
+    --bg-alt: #071427;
+    --card: #081226;
+    --text: #e6f0ff;
+    --muted: #95aac4;
+    --accent: #ff8fa3;
+    --accent-2: #a88bff;
+    --glass: rgba(255,255,255,0.03);
+    --glass-2: rgba(255,255,255,0.02);
+    --shadow: rgba(0,0,0,0.5);
+  }
+}
+
+html[data-theme='dark']{
+  --bg: linear-gradient(180deg,#041226,#071427);
+  --bg-alt: #071427;
+  --card: #0b2236; /* darker card so white text reads well */
+  --text: #eaf4ff; /* near-white for body text */
+  --muted: #9fb7d6; /* readable muted color */
+  --accent: #7fc3ff; /* cooler accent in dark mode */
+  --accent-2: #6ea8ff;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --shadow: rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  margin:0; -webkit-font-smoothing:antialiased; transition: background-color .28s ease, color .18s ease;
+  background-image: linear-gradient(120deg, rgba(13,110,253,0.04), rgba(0,123,255,0.02)) !important;
+}
+
+html[data-theme='dark'] body{
+  background-color: #041226 !important;
+  background-image: none !important;
+}
+
+html[data-theme='dark'] input,
+html[data-theme='dark'] textarea,
+html[data-theme='dark'] select{
+  background-color: #0b2236 !important;
+  color: #eaf4ff !important;
+  border-color: #1a3d5c !important;
+}
+
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder{
+  color: #9fb7d6 !important;
+}
+
+html[data-theme='dark'] .form-label{
+  color: #eaf4ff !important;
+}
+
+html[data-theme='dark'] .modal-content{
+  background-color: #081c32 !important;
+  color: #eaf4ff !important;
+}
+
+html[data-theme='dark'] .modal-header{
+  border-bottom-color: #1a3d5c !important;
+}
+
+html[data-theme='dark'] .modal-footer{
+  border-top-color: #1a3d5c !important;
+}
+
+html[data-theme='dark'] .btn-close{
+  filter: invert(1);
+}
+
+.navbar{
+  background-color: #ffffff !important;
+  transition: background-color .28s ease;
+}
+
+html[data-theme='dark'] .navbar{
+  background-color: #0a1c2e !important;
+  border-bottom-color: #1a3d5c !important;
+}
+
+html[data-theme='dark'] .navbar-light .navbar-brand,
+html[data-theme='dark'] .navbar-light .nav-link{
+  color: #eaf4ff !important;
+}
+
+html[data-theme='dark'] .btn-outline-secondary{
+  color: #7fc3ff !important;
+  border-color: #7fc3ff !important;
+}
+
+html[data-theme='dark'] .btn-outline-secondary:hover{
+  background-color: #7fc3ff !important;
+  color: #041226 !important;
+}
+
+/* Ensure the language dropdown toggle and theme toggle match outline-secondary behavior */
+#langToggle.btn-outline-secondary,
+#themeToggle.btn-outline-secondary {
+  /* keep base appearance in both themes */
+}
+
+/* Light mode: match btn-outline-secondary hover */
+#langToggle.btn-outline-secondary:hover,
+#themeToggle.btn-outline-secondary:hover {
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+  border-color: #e9ecef !important;
+}
+
+/* Dark mode: match btn-outline-secondary hover in dark theme */
+html[data-theme='dark'] #langToggle.btn-outline-secondary:hover,
+html[data-theme='dark'] #themeToggle.btn-outline-secondary:hover {
+  background-color: #7fc3ff !important;
+  color: #041226 !important;
+  border-color: #7fc3ff !important;
+}
+
+.hero{
+  margin-top:18px;
+  border-radius:16px;
+  padding:36px 22px;
+  color:var(--card);
+  background-image: linear-gradient(180deg, rgba(13,110,253,0.22), rgba(0,123,255,0.06)), url("https://picsum.photos/id/1018/1600/600");
+  background-size:cover;
+  background-position:center;
+  box-shadow: 0 18px 40px var(--shadow);
+  color: #fff;
+  overflow:hidden;
+}
+
+.hero .lead{opacity:.95; color: #ffffff !important}
+.hero .muted-small{ color: #ffffff !important; opacity: 0.95 }
+.hero h1,
+.hero .h3{ color: #ffffff !important }
+.brand { display:flex; align-items:center; gap:10px; font-weight:700; color:#000000; text-shadow: none; transition: color .2s ease; cursor: pointer; }
+.brand:hover { color: #a9a9a9; }
+.brand i{font-size:22px}
+
+html[data-theme='dark'] .brand { color: #eaf4ff !important; }
+html[data-theme='dark'] .brand:hover { color: #7fc3ff !important; }
+
+.card-travel{
+  border:0;
+  border-radius:12px;
+  position: relative;
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
+  transition: transform .18s ease, box-shadow .18s ease, background-color .28s ease;
+  box-shadow: 0 10px 30px var(--shadow);
+  overflow:hidden;
+}
+.card-travel:hover{ transform: translateY(-6px); box-shadow: 0 26px 48px rgba(8,20,40,0.12); }
+.card-img-top{ height:220px; object-fit:cover; display:block; width:100% }
+.muted-small{ color:var(--muted); font-size:.9rem }
+.card-travel .card-title{ color: var(--text); font-weight: 600; }
+.card-travel .card-text{ color: var(--muted); }
+
+/* Make sure bootstrap's .text-muted doesn't become too dark in dark mode */
+.card .text-muted{ color: var(--muted) !important; }
+
+html[data-theme='dark'] .card-travel{
+  background: linear-gradient(180deg, #0b2236, rgba(11,34,54,0.8)) !important;
+}
+.card-travel .delete-btn{ position: relative; z-index: 10; }
+.card-travel .stretched-link{ z-index: 1; }
+.fab{ position:fixed; right:20px; bottom:20px; z-index:1100; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 34px rgba(12,18,28,0.18); background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff }
+.search-input{ max-width:420px }
+.tag { font-size:.75rem; padding:.22rem .55rem; border-radius:8px; background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); color:var(--card); border:1px solid rgba(255,255,255,0.04) }
+footer{ padding:28px 0; text-align:center; color:var(--muted); font-size:.9rem }
+
+/* Theme-aware button styles (fixed top-right) */
+/* Place theme toggle in the navbar (not fixed) */
+.navbar #themeToggle:hover, 
+.navbar #langToggle:hover {
+  background-color: #d3d3d3 !important;
+  color: #000000 !important;
+  border-color: #d3d3d3 !important;
+}
+
+html[data-theme='dark'] .navbar #themeToggle:hover, 
+html[data-theme='dark'] .navbar #langToggle:hover {
+  /* Match the dark-mode outline-secondary hover (accent background, dark text) */
+  background-color: var(--accent) !important;
+  color: #041226 !important;
+  border-color: var(--accent) !important;
+}
+
+/* Navbar placement tweak: make sure it aligns nicely inside the header */
+.navbar .ms-auto #themeToggle{ background: transparent; }
+.navbar .ms-auto #langToggle{ background: transparent; }
+
+@media (prefers-color-scheme: dark){
+  .navbar .ms-auto #themeToggle{ background: transparent; }
+  .navbar .ms-auto #langToggle{ background: transparent; }
+}
+
+/* Responsive tweaks */
+@media (max-width:767px){
+  .hero{ padding:22px 16px; border-radius:12px }
+  .card-img-top{ height:160px }
+  .search-input{ max-width:160px }
+  .fab{ width:56px; height:56px }
+}
+
+/* Dark-mode specific tweaks for readability */
+html[data-theme='dark'] .hero{
+  background-image: linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.70)), url("https://picsum.photos/id/1018/1600/600");
+}
+
+html[data-theme='dark'] .hero h1,
+html[data-theme='dark'] .hero .h3{
+  color: #ffffff !important;
+}
+
+html[data-theme='dark'] .tag{ 
+  background: rgba(255,255,255,0.06) !important; 
+  color: #7fc3ff !important; 
+  border: 1px solid rgba(127,195,255,0.2) !important;
+}
+
+html[data-theme='dark'] .fab{ 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #7fc3ff, #6ea8ff) !important;
+}
+
+html[data-theme='dark'] .form-select{
+  background-color: #0b2236 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%237fc3ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+  color: #eaf4ff !important;
+}
+
+html[data-theme='dark'] .form-control:focus,
+html[data-theme='dark'] .form-select:focus{
+  border-color: #7fc3ff !important;
+  box-shadow: 0 0 0 0.25rem rgba(127,195,255, 0.25) !important;
+}
+
+/* preview thumbnails inside modal */
+#previewContainer img{ width:96px; height:64px; object-fit:cover; border-radius:6px; }
+
+/* Post detail page dark mode styles */
+html[data-theme='dark'] .mx-auto article {
+  color: var(--text);
+}
+
+html[data-theme='dark'] article h1,
+html[data-theme='dark'] article .h1,
+html[data-theme='dark'] article .h3{
+  color: #eaf4ff !important;
+}
+
+html[data-theme='dark'] article .text-muted {
+  color: var(--muted) !important;
+}
+
+html[data-theme='dark'] article header {
+  border-bottom-color: #1a3d5c !important;
+}
+
+html[data-theme='dark'] .alert.alert-warning {
+  background-color: #1a3d5c !important;
+  color: #eaf4ff !important;
+  border-color: #2a5a8c !important;
+}
+
+html[data-theme='dark'] .alert.alert-warning a {
+  color: #7fc3ff !important;
+}
+
+html[data-theme='dark'] article .btn-outline-secondary {
+  color: #7fc3ff !important;
+  border-color: #7fc3ff !important;
+}
+
+html[data-theme='dark'] article .btn-outline-secondary:hover {
+  background-color: #7fc3ff !important;
+  color: #041226 !important;
+  border-color: #7fc3ff !important;
+}
+
+html[data-theme='dark'] .post-content {
+  color: #eaf4ff !important;
+}
+
+@media (min-width:992px){ .card-img-top{ height:260px } }
+
+/* end moved styles */
+
